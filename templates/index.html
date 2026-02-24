@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sl">
 <head>
     <meta charset="UTF-8">
     <title>FLASK</title>
@@ -7,13 +7,20 @@
 <body>
     <h1>Met kovanca</h1>
     <div id="coin">Klikni gumb za met</div>
-    <button onclick="btnclick" type="button">FLIP</button>
+    <button onclick="btnclick()" type="button">FLIP</button>
 </body>
 </html>
 
 <script>
-    function btnclick(){
-        var divCoin = document
-        console.log("TEST")
+    function btnclick() {
+        var divCoin = document.getElementById("coin")
+        $.ajax({
+            url: "/coinData",
+            data:{zipcode:97201},
+            success: function(result){
+                console.log(result)
+                divCoin.innerHTML=result
+            }
+        })
     }
 </script>
