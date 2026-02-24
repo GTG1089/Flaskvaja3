@@ -2,8 +2,9 @@ import random
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
-app.run(debug=True)
+@app.route('/')
+def main():
+    return render_template('layout.html')
 @app.route('/coinFlip')
 def coinFlip():
     return render_template('index.html')
@@ -11,3 +12,6 @@ def coinFlip():
 def coinData():
     rnd = random.randint(0,1)
     return ["TAILS", "HEADS"][rnd]
+if __name__ == '__main__':
+    app.run(debug=True)
+ 

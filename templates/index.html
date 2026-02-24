@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>FLASK</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <h1>Met kovanca</h1>
     <div id="coin">Klikni gumb za met</div>
     <button onclick="btnclick()" type="button">FLIP</button>
-</body>
-</html>
-
-<script>
+    <script>
     function btnclick() {
         var divCoin = document.getElementById("coin")
         $.ajax({
@@ -23,4 +21,8 @@
             }
         })
     }
-</script>
+    </script>
+</body>
+
+</html>
+
