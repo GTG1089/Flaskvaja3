@@ -12,12 +12,13 @@
     <script>
     function btnclick() {
         var divCoin = document.getElementById("coin")
+        divCoin.innerHTML="mečem..."
         $.ajax({
             url: "/coinData",
-            data:{zipcode:97201},
+            data:{vrednost: "test"},
             success: function(result){
                 console.log(result)
-                divCoin.innerHTML=result
+                divCoin.innerHTML = result.status + "<img src='" + result.img + "' alt='" + result.status + "' class='coin-img'>"
             }
         })
     }
